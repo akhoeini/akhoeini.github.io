@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amin Khoeini | Portfolio</title>
+  <meta name="description" content="Portfolio of Amin Khoeini, Android and Software Developer based in Canada.">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:700,400|Roboto:400,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    :root {
+      --primary: #11a9e4;
+      --accent: #23e68a;
+      --bg: #181d23;
+      --card: #232a34;
+      --text: #d5e5ef;
+      --muted: #7f93ad;
+      --border: #323c49;
+      --white: #fff;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Roboto', Arial, sans-serif;
+      font-size: 18px;
+      opacity: 0;
+      transform: translateY(40px);
+      animation: fadein-slideup 1s cubic-bezier(.42, 0, .58, 1) forwards;
+    }
+
+    @keyframes fadein-slideup {
+      to {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    /* Navigation */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 99;
+      background: var(--bg);
+      border-bottom: 1.5px solid var(--border);
+      box-shadow: 0 1px 8px #0003;
+      padding: 0;
+    }
+
+    .nav-inner {
+      max-width: 950px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.4rem 1.2rem;
+    }
+
+    .nav-logo {
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--primary);
+      letter-spacing: -1px;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.4rem;
+    }
+
+    .nav-link {
+      color: var(--text);
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 500;
+      position: relative;
+      padding: 0.3rem 0;
+      transition: color 0.18s;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      color: var(--accent);
+    }
+
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .bar {
+      width: 24px;
+      height: 3px;
+      background: var(--text);
+      margin: 4px 0;
+      border-radius: 2px;
+      transition: 0.3s;
+    }
+
+    @media (max-width: 750px) {
+      .nav-inner {
+        flex-direction: row;
+        padding: 0.5rem 0.6rem;
+      }
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        background: var(--card);
+        position: absolute;
+        top: 55px;
+        right: 12px;
+        min-width: 160px;
+        border-radius: 7px;
+        box-shadow: 0 8px 16px #0008;
+        border: 1px solid var(--border);
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-link {
+        padding: 0.7em 1.3em;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .nav-link:last-child {
+        border-bottom: none;
+      }
+
+      .nav-toggle {
+        display: flex;
+      }
+    }
+
+    header {
+      background: url('resources/banner2.png') center center/cover no-repeat;
+      color: var(--white);
+      padding: 3rem 1rem 2rem 1rem;
+      text-align: center;
+      border-bottom-left-radius: 32px;
+      border-bottom-right-radius: 32px;
+      box-shadow: 0 4px 24px 0 #0005;
+    }
+
+    .avatar {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      background: #282f38;
+      margin: 0 auto 1.2rem auto;
+      box-shadow: 0 2px 12px #0008;
+      display: block;
+      object-fit: cover;
+      border: 4px solid var(--border);
+    }
+
+    h1 {
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-weight: 700;
+      font-size: 2.3rem;
+      margin: 0 0 0.2rem 0;
+    }
+
+    .subtitle {
+      font-size: 1.1rem;
+      color: var(--white);
+      opacity: 0.85;
+      margin-bottom: 0.6rem;
+    }
+
+    .contact a {
+      color: var(--white);
+      text-decoration: underline dotted;
+      margin-right: 1.2em;
+      font-size: 1rem;
+      opacity: 0.8;
+    }
+
+    .contact a:last-child {
+      margin-right: 0;
+    }
+
+    main {
+      max-width: 900px;
+      margin: -40px auto 0 auto;
+      padding: 0 1.2rem 2rem 1.2rem;
+    }
+
+    section {
+      background: var(--card);
+      margin: 1.3rem 0;
+      border-radius: 18px;
+      box-shadow: 0 1px 8px 0 #0003;
+      padding: 2rem 1.5rem;
+      border: 1.2px solid var(--border);
+      transition: box-shadow 0.2s, border 0.2s;
+    }
+
+    section:hover {
+      box-shadow: 0 4px 24px 0 #0005;
+      border-color: var(--primary);
+    }
+
+    h2 {
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--primary);
+      border-left: 6px solid var(--accent);
+      padding-left: 0.6em;
+      margin-bottom: 1.1rem;
+      letter-spacing: -1px;
+    }
+
+    .stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .6em;
+      margin-bottom: 0.7em;
+    }
+
+    .tag {
+      background: var(--accent);
+      color: #022a13;
+      padding: 0.25em 0.7em;
+      border-radius: 999px;
+      font-size: .93em;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      box-shadow: 0 1px 4px #0004;
+    }
+
+    ul {
+      padding-left: 1.1em;
+    }
+
+    .exp-title {
+      font-weight: bold;
+      color: var(--primary);
+    }
+
+    .exp-role {
+      color: var(--accent);
+      font-weight: 500;
+    }
+
+    .exp-period {
+      color: var(--muted);
+      font-size: 0.97em;
+    }
+
+    /* Project sections */
+    .notable-project {
+      margin-bottom: 2.5rem;
+      background: linear-gradient(120deg, #242a31 80%, #1d2226 100%);
+      border-radius: 18px;
+      box-shadow: 0 4px 20px #0007;
+      border: 1.5px solid var(--border);
+      padding: 2.3rem 1.2rem 2rem 1.2rem;
+      animation: project-fade-in 0.8s cubic-bezier(.4, 0, .3, 1) backwards;
+      opacity: 0;
+      transform: translateY(60px) scale(0.96);
+      transition: box-shadow 0.18s, border 0.18s, transform 0.22s;
+    }
+
+    .notable-project.visible {
+      opacity: 1;
+      transform: none;
+      animation: project-fade-in 0.8s cubic-bezier(.4, 0, .3, 1) forwards;
+    }
+
+    @keyframes project-fade-in {
+      to {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    .notable-project:hover {
+      box-shadow: 0 12px 36px #11a9e470, 0 1px 8px #000c;
+      border-color: var(--accent);
+      transform: scale(1.025);
+      transition: box-shadow 0.2s, border 0.2s, transform 0.2s;
+    }
+
+    .project-media-stack {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.1rem;
+      margin-bottom: 1rem;
+    }
+
+
+    .project-media-stack {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 0.6em;
+      margin-bottom: 0.6em;
+    }
+
+    .project-media-stack img,
+    .project-media-stack video {
+      width: 100%;
+      max-width: 100%;
+      aspect-ratio: 1.5/1;
+      /* keeps a nice rectangular thumbnail, adjust as needed */
+      max-height: 160px;
+      object-fit: cover;
+      border-radius: 9px;
+      background: #181d23;
+      box-shadow: 0 1px 6px #0005;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+
+    .project-media-stack img:hover,
+    .project-media-stack video:hover {
+      transform: scale(1.07) rotate(-0.5deg);
+      box-shadow: 0 6px 22px #23e68a90, 0 1px 8px #000b;
+    }
+
+    .project-media-stack img:hover,
+    .project-media-stack video:hover {
+      transform: scale(1.045) rotate(-1.2deg);
+      box-shadow: 0 8px 36px #23e68a60, 0 1px 8px #000c;
+    }
+
+    .notable-project .exp-title {
+      font-size: 1.22rem;
+      letter-spacing: -.5px;
+      margin-bottom: .15rem;
+    }
+
+    .notable-project p {
+      margin: 0.3rem 0 0 0;
+      font-size: 1.04rem;
+      color: var(--muted);
+    }
+
+    .lightbox {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: fixed;
+      z-index: 9999;
+      left: 0;
+      top: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(10, 18, 24, 0.95);
+      transition: opacity 0.18s;
+    }
+
+    .lightbox-content img,
+    .lightbox-content video {
+      max-width: 90vw;
+      max-height: 82vh;
+      border-radius: 12px;
+      box-shadow: 0 8px 44px #000d;
+      background: #181d23;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 24px;
+      right: 38px;
+      color: #fff;
+      font-size: 2.7rem;
+      font-weight: 700;
+      cursor: pointer;
+      z-index: 99999;
+      transition: color 0.2s;
+      opacity: 0.82;
+    }
+
+    .lightbox-close:hover {
+      color: #23e68a;
+      opacity: 1;
+    }
+
+    @media (max-width: 600px) {
+
+      .lightbox-content img,
+      .lightbox-content video {
+        max-width: 98vw;
+        max-height: 64vh;
+      }
+
+      .lightbox-close {
+        top: 12px;
+        right: 16px;
+        font-size: 2rem;
+      }
+    }
+
+    @media (max-width: 800px) {
+      .notable-project {
+        padding: 1.2rem 0.3rem 1.2rem 0.3rem;
+      }
+
+      section {
+        padding: 1.1rem 0.5rem;
+      }
+
+      main {
+        padding: 0 0.2rem 1.3rem 0.2rem;
+      }
+
+      .project-media-stack img,
+      .project-media-stack video {
+        max-height: 180px;
+      }
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.4rem 1rem 1.8rem 1rem;
+      font-size: 1rem;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const lightbox = document.getElementById('lightbox');
+  const content = document.getElementById('lightbox-content');
+  const closeBtn = document.getElementById('lightbox-close');
+
+  // Open lightbox
+  document.body.addEventListener('click', function(e) {
+    const isImg = e.target.matches('.project-media-stack img');
+    const isVid = e.target.matches('.project-media-stack video');
+    if ((isImg || isVid) && !lightbox.contains(e.target)) {
+      content.innerHTML = '';
+      if (isImg) {
+        const img = document.createElement('img');
+        img.src = e.target.src;
+        img.alt = e.target.alt || '';
+        img.style.maxWidth = '90vw';
+        img.style.maxHeight = '82vh';
+        content.appendChild(img);
+      } else if (isVid) {
+        const video = document.createElement('video');
+        video.src = e.target.currentSrc || e.target.src;
+        video.setAttribute('controls', '');
+        video.setAttribute('autoplay', '');
+        video.style.maxWidth = '90vw';
+        video.style.maxHeight = '82vh';
+        content.appendChild(video);
+        setTimeout(() => { video.play(); }, 100); // ensure autoplay in all browsers
+      }
+      lightbox.style.display = 'flex';
+      setTimeout(() => {
+        lightbox.style.opacity = '1';
+        lightbox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }, 10);
+
+      // Escape closes
+      document.onkeydown = function(ev) {
+        if (ev.key === 'Escape') closeLightbox();
+      };
+    }
+  });
+
+  function closeLightbox() {
+    // Pause and unload video
+    const vids = content.querySelectorAll('video');
+    vids.forEach(vid => {
+      vid.pause();
+      vid.removeAttribute('src');
+      vid.load();
+    });
+    lightbox.style.opacity = '0';
+    setTimeout(() => {
+      lightbox.style.display = 'none';
+      content.innerHTML = '';
+      document.onkeydown = null;
+    }, 180);
+  }
+
+  closeBtn.onclick = closeLightbox;
+  lightbox.onclick = function(e) {
+    if (e.target === this) closeLightbox();
+  };
+});
+</script>
+
+<body>
+  <nav>
+    <div class="nav-inner">
+      <a class="nav-logo" href="#">Amin Khoeini</a>
+      <div class="nav-toggle" id="nav-toggle">
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+      <div class="nav-links" id="nav-links">
+        <a class="nav-link" href="#profile">About Me</a>
+        <a class="nav-link" href="#experience">Experience</a>
+        <a class="nav-link" href="#projects">Projects</a>
+        <a class="nav-link" href="#education">Education</a>
+        <a class="nav-link" href="#hobbies">Hobbies</a>
+      </div>
+    </div>
+  </nav>
+  <header>
+    <img src="resources/profile_pic.JPG" alt="Amin Khoeini" class="avatar">
+    <h1>Amin Khoeini</h1>
+    <div class="subtitle">Senior Android Developer | Full-Stack Developer | Canada</div>
+    <div class="contact">
+      <a href="mailto:mohammadamin.khoeini@gmail.com">mohammadamin.khoeini@gmail.com</a>
+      <a href="https://www.linkedin.com/in/amin-khoeini/" target="_blank">
+        <i class="fab fa-linkedin"></i> LinkedIn
+      </a>
+
+      <a href="https://github.com/akhoeini" target="_blank">
+        <i class="fab fa-github"></i> GitHub
+      </a>
+    </div>
+  </header>
+  <main>
+    <section id="profile">
+      <h2>About me</h2>
+      <p>I'm a curious and driven software developer with over 8 years of experience, mostly focused on Android apps,
+        Java, Kotlin, and Spring Boot. I pick up new skills quickly, love tackling tricky problems, and am always
+        motivated to build something cool. When I'm not coding, you'll probably find me outdoors, especially hiking new
+        trails or chasing my next adventure. I'm also a big movie fan; cinema inspires me and gives me fresh
+        perspectives both in my life and my work.</p>
+    </section>
+    <section id="experience">
+      <h2>Professional Experience</h2>
+      <ul>
+        <li>
+          <span class="exp-title">Whim (Videri)</span>
+          <span class="exp-role">Senior Android Developer</span>
+          <span class="exp-period">Nov 2021 – Mar 2025 · Montréal, QC</span>
+          <br>Led Canvas/Controller platforms, voice/casting/NFT/BLE, WebSocket, live streaming, Agile teams.
+        </li>
+        <li>
+          <span class="exp-title">Himart</span>
+          <span class="exp-role">Android Developer</span>
+          <span class="exp-period">Jul 2019 – Dec 2020 · Tehran, Iran</span>
+          <br>POS suite, custom launcher, real-time messaging (non-Firebase), UX improvements.
+        </li>
+        <li>
+          <span class="exp-title">Paygear</span>
+          <span class="exp-role">Software Developer</span>
+          <span class="exp-period">Jun 2017 – Jun 2019 · Tehran, Iran</span>
+          <br>SDKs for finance, beacons, wallet modules; apps with 5M+ downloads.
+        </li>
+        <li>
+          <span class="exp-title">Skywaves</span>
+          <span class="exp-role">Mobile Developer</span>
+          <span class="exp-period">Dec 2015 – Jun 2017 · Tehran, Iran</span>
+          <br>Unity/Xamarin apps and multiplayer music game.
+        </li>
+      </ul>
+    </section>
+    <section id="projects">
+      <h2>Notable Projects</h2>
+      <div class="notable-project">
+        <div class="project-media-stack">
+          <video >
+            <source src="resources/orchestration.mp4" type="video/mp4">
+          </video>
+          <img src="resources/whimapp.PNG" alt="Project Screenshot">
+          <img src="resources/whim_store.PNG" alt="Project Screenshot">
+          <video >
+            <source src="resources/casting.mp4" type="video/mp4">
+          </video>
+          <video >
+            <source src="resources/visualizer.mp4" type="video/mp4">
+          </video>
+          <video >
+            <source src="resources/voice_control_widget.mp4" type="video/mp4">
+          </video>
+          <video >
+            <source src="resources/vortex.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="exp-title">Canvas Apps & Controller <span
+            style="font-weight: normal;color:#7f93ad;">(Whim/Videri)</span></div>
+        <p>Embedded Android platform with orchestration for multiple displays, voice control (Amazon Lex, VOSK),
+          casting/mirroring, NFT wallets, BLE provisioning, and OpenGL widgets.</p>
+      </div>
+
+      <div class="notable-project">
+        <div class="project-media-stack">
+          <img src="resources/Himart_mobile.png" alt="POS App Demo">
+          <img src="resources/fire_pos.png" alt="POS App Demo">
+          <img src="resources/fire_pos_app.png" alt="POS App Demo">
+          <img src="resources/firepose_app.png" alt="POS App Demo">
+
+        </div>
+        <div class="exp-title">Android POS Suite <span style="font-weight: normal;color:#7f93ad;">(Himart)</span></div>
+        <p>POS, Warehouse, and Accounting apps; custom launcher/ad system; native messaging (non-Firebase) for Fire POS
+          devices.</p>
+      </div>
+    </section>
+    <section id="education">
+      <h2>Education & Languages</h2>
+      <ul>
+        <li><b>John Abbott College</b> – AEC Full-Stack Software Development (Ongoing)</li>
+        <li><b>University of Tehran</b> – Master of Economics</li>
+        <li><b>Sharif University of Technology</b> – Bachelor of Engineering</li>
+        </li>
+      </ul>
+    </section>
+    <section id="hobbies">
+      <h2>Hobbies</h2>
+      <p>Calisthenics, history documentaries, building new tech projects, hiking, cinema ,and exploring
+        software trends.</p>
+    </section>
+  </main>
+  <div id="lightbox" class="lightbox" style="display:none;">
+    <span id="lightbox-close" class="lightbox-close">&times;</span>
+    <div id="lightbox-content" class="lightbox-content"></div>
+  </div>
+  <footer>
+    &copy; 2025 Amin Khoeini &mdash; Designed by Amin Khoeini
+  </footer>
+  <script>
+    const navToggle = document.getElementById('nav-toggle');
+    const navLinks = document.getElementById('nav-links');
+    navToggle.onclick = function () {
+      navLinks.classList.toggle('open');
+    };
+    const sections = ['about','experience', 'projects', 'education', 'hobbies'];
+    const navs = Array.from(document.querySelectorAll('.nav-link'));
+    window.addEventListener('scroll', () => {
+      let fromTop = window.scrollY + 80;
+      let found = false;
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const section = document.getElementById(sections[i]);
+        if (section && section.offsetTop <= fromTop) {
+          navs.forEach(link => link.classList.remove('active'));
+          navs[i].classList.add('active');
+          found = true;
+          break;
+        }
+      }
+      if (!found) navs.forEach(link => link.classList.remove('active'));
+    });
+    navLinks.querySelectorAll('a').forEach(link => link.onclick = () => navLinks.classList.remove('open'));
+
+    function revealProjects() {
+      const cards = document.querySelectorAll('.notable-project');
+      const trigger = window.innerHeight * 0.92;
+      cards.forEach(card => {
+        const rect = card.getBoundingClientRect();
+        if (rect.top < trigger) card.classList.add('visible');
+      });
+    }
+    window.addEventListener('scroll', revealProjects);
+    window.addEventListener('DOMContentLoaded', revealProjects);
+  </script>
+
+</body>
+
+</html>

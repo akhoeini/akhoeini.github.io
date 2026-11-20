@@ -4,8 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Amin Khoeini | Portfolio</title>
-  <meta name="description" content="Portfolio of Amin Khoeini, Android and Software Developer based in Canada.">
+  <title>Amin Khoeini | Mobile Developer Portfolio</title>
+  <meta name="description" content="Portfolio of Amin Khoeini, senior mobile developer (React Native, Android, Kotlin) in Montréal, Canada, and creator of Petnubo.">
   <link href="https://fonts.googleapis.com/css?family=Montserrat:700,400|Roboto:400,500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
@@ -423,6 +423,51 @@
       }
     }
 
+    .project-media-stack.phones {
+      grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+    }
+
+    .project-media-stack.phones img {
+      aspect-ratio: 9/19;
+      max-height: 260px;
+      object-fit: cover;
+      object-position: top;
+    }
+
+    .project-links {
+      margin-top: 0.7rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+
+    .project-links a,
+    .exp-link {
+      color: var(--accent);
+      font-weight: 500;
+      text-decoration: none;
+    }
+
+    .project-links a:hover,
+    .exp-link:hover {
+      text-decoration: underline;
+    }
+
+    #experience li {
+      margin-bottom: 1rem;
+    }
+
+    .skill-group {
+      margin-bottom: 0.9rem;
+    }
+
+    .skill-group h3 {
+      font-size: 1rem;
+      color: var(--text);
+      margin: 0 0 0.45rem 0;
+      font-weight: 500;
+    }
+
     footer {
       text-align: center;
       padding: 1.4rem 1rem 1.8rem 1rem;
@@ -506,6 +551,7 @@ document.addEventListener('DOMContentLoaded', function() {
       </div>
       <div class="nav-links" id="nav-links">
         <a class="nav-link" href="#profile">About Me</a>
+        <a class="nav-link" href="#skills">Skills</a>
         <a class="nav-link" href="#experience">Experience</a>
         <a class="nav-link" href="#projects">Projects</a>
         <a class="nav-link" href="#education">Education</a>
@@ -516,7 +562,7 @@ document.addEventListener('DOMContentLoaded', function() {
   <header>
     <img src="resources/profile_pic.JPG" alt="Amin Khoeini" class="avatar">
     <h1>Amin Khoeini</h1>
-    <div class="subtitle">Senior Android Developer | Full-Stack Developer | Canada</div>
+    <div class="subtitle">Senior Mobile Developer (React Native · Android) | Full-Stack | Montréal, Canada</div>
     <div class="contact">
       <a href="mailto:mohammadamin.khoeini@gmail.com">mohammadamin.khoeini@gmail.com</a>
       <a href="https://www.linkedin.com/in/amin-khoeini/" target="_blank">
@@ -526,20 +572,80 @@ document.addEventListener('DOMContentLoaded', function() {
       <a href="https://github.com/akhoeini" target="_blank">
         <i class="fab fa-github"></i> GitHub
       </a>
+      <a href="https://petnubo.com" target="_blank" rel="noopener">
+        <i class="fas fa-paw"></i> Petnubo
+      </a>
     </div>
   </header>
   <main>
     <section id="profile">
       <h2>About me</h2>
-      <p>I'm a curious and driven software developer with over 8 years of experience, mostly focused on Android apps,
-        Java, Kotlin, and Spring Boot. I pick up new skills quickly, love tackling tricky problems, and am always
-        motivated to build something cool. When I'm not coding, you'll probably find me outdoors, especially hiking new
-        trails or chasing my next adventure. I'm also a big movie fan; cinema inspires me and gives me fresh
-        perspectives both in my life and my work.</p>
+      <p>I'm a mobile developer with 9+ years of experience building Android and cross-platform apps in React
+        Native, Expo, TypeScript and Kotlin. Today I work at Spartakus (Laurentide Controls, an Emerson Impact
+        Partner), building an offline-first React Native app that industrial field technicians use with FLIR
+        thermal cameras. On my own time I built and launched <a class="exp-link" href="https://petnubo.com"
+        target="_blank" rel="noopener">Petnubo</a>, a bilingual pet-community platform whose app is live on the
+        App Store, with Spring Boot services and AI content agents.</p>
+      <p>I use AI coding agents (Claude Code and Codex) every day, and I review and test every change they make.
+        I pick up new tools quickly and enjoy hard problems. Away from the keyboard you'll usually find me hiking
+        or at the movies.</p>
+    </section>
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="skill-group">
+        <h3>Mobile &amp; Frontend</h3>
+        <div class="stack"><span class="tag">React Native</span><span class="tag">Expo</span><span
+            class="tag">TypeScript</span><span class="tag">Kotlin</span><span class="tag">Java</span><span
+            class="tag">Android SDK</span><span class="tag">Jetpack Compose</span><span class="tag">Native
+            modules (Kotlin / Obj-C++)</span><span class="tag">React</span><span class="tag">Next.js</span></div>
+      </div>
+      <div class="skill-group">
+        <h3>Architecture &amp; Data</h3>
+        <div class="stack"><span class="tag">Clean / feature-based architecture</span><span
+            class="tag">MVVM</span><span class="tag">Redux Toolkit</span><span class="tag">TanStack Query</span><span
+            class="tag">SQLite</span><span class="tag">Drizzle ORM</span><span class="tag">Room
+            (Android)</span><span class="tag">Offline-first sync</span></div>
+      </div>
+      <div class="skill-group">
+        <h3>Testing &amp; Quality</h3>
+        <div class="stack"><span class="tag">Jest</span><span class="tag">Detox (end-to-end)</span><span
+            class="tag">React Native Testing Library</span><span class="tag">JUnit</span><span
+            class="tag">Espresso</span><span class="tag">Mockito</span><span class="tag">Sentry</span></div>
+      </div>
+      <div class="skill-group">
+        <h3>Backend &amp; DevOps</h3>
+        <div class="stack"><span class="tag">Spring Boot</span><span class="tag">PostgreSQL</span><span
+            class="tag">Flyway</span><span class="tag">JWT / OAuth 2.0</span><span class="tag">Python</span><span
+            class="tag">Docker</span><span class="tag">GitHub Actions</span><span class="tag">AWS</span></div>
+      </div>
+      <div class="skill-group">
+        <h3>AI &amp; LLM</h3>
+        <div class="stack"><span class="tag">Claude Code</span><span class="tag">OpenAI Codex</span><span
+            class="tag">Claude API</span><span class="tag">OpenAI API</span><span class="tag">AI agents with web
+            search</span><span class="tag">Prompt engineering</span><span class="tag">Human-in-the-loop
+            review</span></div>
+      </div>
     </section>
     <section id="experience">
       <h2>Professional Experience</h2>
       <ul>
+        <li>
+          <span class="exp-title">Spartakus / Laurentide Controls (Emerson Impact Partner)</span>
+          <span class="exp-role">Mobile Application Developer</span>
+          <span class="exp-period">Jul 2025 – Present · Montréal, QC</span>
+          <br>Led the V2 refactor and V3 build of the Spartakus APM app in React Native, Expo and TypeScript for
+          field technicians. Built offline-first SQLite/Drizzle sync, FLIR thermal camera native modules
+          (Kotlin, Objective-C++), and Jest/Detox test suites.
+        </li>
+        <li>
+          <span class="exp-title">Petnubo</span>
+          <span class="exp-role">Founder &amp; Sole Developer (personal project)</span>
+          <span class="exp-period">Jun 2026 – Present · <a class="exp-link" href="https://petnubo.com"
+              target="_blank" rel="noopener">petnubo.com</a></span>
+          <br>Designed, built and launched a bilingual pet community on my own: an Expo/React Native app live on the App
+          Store (Android in closed testing), a Next.js website, Spring Boot microservices, and Python AI agents using the Claude and
+          OpenAI APIs.
+        </li>
         <li>
           <span class="exp-title">Whim (Videri)</span>
           <span class="exp-role">Senior Android Developer</span>
@@ -568,6 +674,37 @@ document.addEventListener('DOMContentLoaded', function() {
     </section>
     <section id="projects">
       <h2>Notable Projects</h2>
+      <div class="notable-project">
+        <div class="project-media-stack phones">
+          <img src="resources/petnubo-home.jpg" alt="Petnubo app home screen">
+          <img src="resources/petnubo-social-feed.jpg" alt="Petnubo social feed">
+          <img src="resources/petnubo-videos.jpg" alt="Petnubo short videos">
+          <img src="resources/petnubo-shop.jpg" alt="Petnubo shop">
+          <img src="resources/petnubo-sos-missing-pets.jpg" alt="Petnubo missing pets map">
+          <img src="resources/petnubo-fundraising.jpg" alt="Petnubo fundraising">
+        </div>
+        <div class="exp-title">Petnubo <span style="font-weight: normal;color:#7f93ad;">(personal project, built
+            solo)</span></div>
+        <p>A bilingual (English/French) home for animal lovers: articles, short videos, a social feed, private
+          messages, missing-pet alerts with maps, fundraisers and a shop. I designed, built and run all of it.</p>
+        <ul>
+          <li><b>Mobile app</b> live on the App Store (Android in Google Play closed testing): Expo, React Native, TypeScript, TanStack Query, Drizzle/SQLite, plus
+            a Kotlin native module that compresses video on the phone's hardware encoder (Media3).</li>
+          <li><b>Backend:</b> two Java 21 / Spring Boot microservices, each with its own PostgreSQL database, JWT
+            with rotating refresh tokens, encrypted messaging, S3 media and an ffmpeg video worker.</li>
+          <li><b>Web:</b> a Next.js / React 19 site and admin portal for moderation, appeals and analytics.</li>
+          <li><b>AI agents:</b> a Python article agent uses the Claude and OpenAI APIs with web search to draft
+            cited articles for human review, and a video agent finds free clips.</li>
+          <li><b>Delivery:</b> Docker Compose, Cloudflare Tunnel, GitHub Actions CI and Sentry, with development
+            done through Claude Code and Codex under strict review rules.</li>
+        </ul>
+        <div class="project-links">
+          <a href="https://petnubo.com" target="_blank" rel="noopener"><i class="fas fa-globe"></i> petnubo.com</a>
+          <a href="https://apps.apple.com/us/app/petnubo/id6835171166" target="_blank"
+            rel="noopener"><i class="fab fa-app-store-ios"></i> App Store</a>
+        </div>
+      </div>
+
       <div class="notable-project">
         <div class="project-media-stack">
           <video >
@@ -610,15 +747,15 @@ document.addEventListener('DOMContentLoaded', function() {
     <section id="education">
       <h2>Education & Languages</h2>
       <ul>
-        <li><b>John Abbott College</b> – AEC Full-Stack Software Development (Ongoing)</li>
+        <li><b>John Abbott College</b> – AEC Full-Stack Software Development</li>
         <li><b>University of Tehran</b> – Master of Economics</li>
         <li><b>Sharif University of Technology</b> – Bachelor of Engineering</li>
-        </li>
       </ul>
+      <p><b>Languages:</b> fluent English, professional working French, native Persian.</p>
     </section>
     <section id="hobbies">
       <h2>Hobbies</h2>
-      <p>Calisthenics, history documentaries, building new tech projects, hiking, cinema ,and exploring
+      <p>Calisthenics, history documentaries, building new tech projects, hiking, cinema and exploring
         software trends.</p>
     </section>
   </main>
@@ -627,7 +764,7 @@ document.addEventListener('DOMContentLoaded', function() {
     <div id="lightbox-content" class="lightbox-content"></div>
   </div>
   <footer>
-    &copy; 2025 Amin Khoeini &mdash; Designed by Amin Khoeini
+    &copy; 2026 Amin Khoeini &mdash; Designed by Amin Khoeini
   </footer>
   <script>
     const navToggle = document.getElementById('nav-toggle');
@@ -635,7 +772,7 @@ document.addEventListener('DOMContentLoaded', function() {
     navToggle.onclick = function () {
       navLinks.classList.toggle('open');
     };
-    const sections = ['about','experience', 'projects', 'education', 'hobbies'];
+    const sections = ['profile', 'skills', 'experience', 'projects', 'education', 'hobbies'];
     const navs = Array.from(document.querySelectorAll('.nav-link'));
     window.addEventListener('scroll', () => {
       let fromTop = window.scrollY + 80;
